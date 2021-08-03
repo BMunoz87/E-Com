@@ -8,7 +8,7 @@
     "start": "node server.js",
     "watch": "nodemon server.js",
     "seed": "node seeds/index.js",
-    "sql": "mysql -u root -p"
+    "sql": "ecom_db -u root -p"
   },
   "repository": {
     "type": "git",

@@ -4,13 +4,13 @@ const { Category, Product } = require('../../models');
 router.get('/', (req, res) => {
     Category.findAll({
         include: {
-          model: Product,
-          attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
+            model: Product,
+            attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
         }
     })
         .then(categoryData => res.json(categoryData))
         .catch(e => {
-          res.status(500).json(e)
+            res.status(500).json(e)
         })
     });
 
@@ -49,7 +49,7 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
     Category.update(req.body, {
         where: {
-          id: req.params.id
+            id: req.params.id
         }
     })
     .then(categoryData => {
@@ -67,7 +67,7 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
     Category.destroy({
         where: {
-          id: req.params.id
+            id: req.params.id
         }
     })
     .then(categoryData => {
